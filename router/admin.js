@@ -12,18 +12,11 @@ router.get('/users',(req,res)=>{
             return;
         }
         if(data){
-            res.json({
-                result: 1,
-                data: data
-            })
+            res.render('admin/tables',{result: 1,data:data});
         }else {
-            res.json({
-                result: 0,
-                info: 'data_err_code:201'
-            })
+            res.render('admin/tables',{result: 0,data: '数据查询失败:201'});
         }
     });
-    res.render('admin/tables');
 });
 router.get('/article',(req,res)=>{
     res.render('admin/article_en');
