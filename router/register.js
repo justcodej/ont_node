@@ -4,7 +4,7 @@ const express = require('express'),
     crypto = require('crypto');
 
 router.get('/',(req,res)=>{
-    req.session.admin?res.render("admin/register"):res.redirect('/');
+    res.render("admin/register",{page: 'register'});
 });
 router.post('/',(req,res)=>{
     const username = req.body['username'],

@@ -3,7 +3,6 @@ const express = require('express'),
     sql = require('../module/mysql');
 
 router.get("/",(req,res)=>{
-    res.locals.admin = req.session.admin;
     res.render('index',{page:"index"});
 }); // 首页
 router.get("/about",(req,res)=>{

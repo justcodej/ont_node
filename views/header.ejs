@@ -23,7 +23,9 @@
     <link rel="stylesheet" type="text/css" href="./css/main.css">
     <link rel="stylesheet" href="./css/view.css">
     <%}else if(page == 'team'){%>
-  <link rel="stylesheet" type="text/css" href="./css/team.css">
+    <link rel="stylesheet" type="text/css" href="./css/team.css">
+    <%}else if(page == 'login' || page == 'register'){%>
+    <link rel="stylesheet" href="./css/templatemo_main.css">
     <%}%>
     <title>Ontology</title>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113878921-1"></script>
@@ -53,9 +55,14 @@
                     <div class="arrow_down"></div>
                 </ul>
             </li>
-            <% if(locals.login){%>
-            <li>
+            <% if(locals.admin){%>
+            <li class="last_menu">
                 <a href="javascropt:"><%= locals.login%></a>
+                <ul class="tow">
+                    <li><a href="/admin">后台管理</a></li>
+                    <li><a href="/logout">登出</a></li>
+                    <div class="arrow_down"></div>
+                </ul>
             </li>
             <%}%>
             <li class="last_menu"><a href="javascript:"></a>

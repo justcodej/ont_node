@@ -4,7 +4,7 @@ const express = require('express'),
     crypto = require('crypto');
 
 router.get('/',(req,res)=>{
-    res.render("admin/sign-in");
+    res.render("admin/sign-in",{page: "login"});
 });
 router.post('/',(req,res)=>{
     const username = req.body.username,

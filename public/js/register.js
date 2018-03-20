@@ -23,9 +23,7 @@
                         $('#username').parent().append('<div class="err_text"><i class="fa fa-times-circle"></i>用户名已存在</div>');
                         $("#regiestbtn").removeAttr('disabled');
                     }else if(data.result){
-                        setTimeout(function () {
-                            window.location.href="/";
-                        },500)
+                        window.location.href="/login";
                     }
                 },
                 error: function(data){
