@@ -7,13 +7,13 @@ router.get('/',(req,res)=>{
     res.render("admin/register",{page: 'register'});
 });
 router.post('/',(req,res)=>{
-    const username = req.body['username'],
-        password = req.body['password'],
+    const username = req.body.username,
+        password = req.body.password,
         md5 = crypto.createHash('md5'),
         newPass = md5.update(password).digest('hex');
-    sql('select * from user where username = ?',[username],(err,data)=>{
+    sql('SELECT * FROM user WHERE username = ?',[username],(err,data)=> {
         if(err){
-            res.render("username_err");
+            res.render('register_err_code:101');
             return;
         }
         if(data == undefined || data.length == 0){

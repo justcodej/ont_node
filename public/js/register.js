@@ -9,15 +9,15 @@
         submitHandler: function(form) {  // 通过验证后运行的函数，里面要加上表单提交的函数，否则表单不会提交。
             $("#regiestbtn").attr('disabled','disabled');
             $.ajax({
-                url: 'register',
+                url: '/register',
                 type: "POST",
                 dataType: 'JSON',
                 data: {
                     username: $('#username').val(),
-                    password: $('#password').val(),
-                    confirm: $('#confirm').val()
+                    password: $('#password').val()
                 },
                 success: function(data){
+                    console.log(data);
                     $('.err_text').remove();
                     if(!data.result && data.info == '用户名已存在'){
                         $('#username').parent().append('<div class="err_text"><i class="fa fa-times-circle"></i>用户名已存在</div>');
@@ -26,8 +26,8 @@
                         window.location.href="/login";
                     }
                 },
-                error: function(data){
-                    alert('登录失败，服务器返回错误信息');
+                error: function(err){
+                    alert('注册失败，服务器返回错误信息');
                 }
             });
             return false;
@@ -46,8 +46,9 @@
                     isPass: '8到16位数字与字母组合'
                 },
                 confirm: {
-                    required: e+'密码不能为空',
-                    isPass: e+'8到16位数字与字母组合'
+                    required: !0,
+                    isPass: '8到16位数字与字母组合',
+                    equalTo: "#password"
                 }
             },
             messages: {
@@ -61,7 +62,8 @@
                 },
                 confirm: {
                     required: e+'密码不能为空',
-                    isPass: e+'8到16位数字与字母组合'
+                    isPass: e+'8到16位数字与字母组合',
+                    equalTo: e+ "两次输入的密码不一致"
                 }
             }
         });

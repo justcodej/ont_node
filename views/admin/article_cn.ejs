@@ -11,7 +11,7 @@
 <body>
 <div class="navbar navbar-inverse" role="navigation">
     <div class="navbar-header">
-        <a href="/admin" class="logo"><h1>Ont</h1></a>
+        <a href="/" class="logo"><h1>Ont</h1></a>
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
@@ -24,13 +24,14 @@
     <div class="navbar-collapse collapse templatemo-sidebar">
         <ul class="templatemo-sidebar-menu">
             <li><a href="/admin"><i class="fa fa-home"></i>Dashboard</a></li>
+            <li><a href="./media"><i class="fa fa-home"></i>Media</a></li>
             <li class="sub open active">
                 <a href="javascript:;">
                     <i class="fa fa-database"></i> Article <div class="pull-right"><span class="caret"></span></div>
                 </a>
                 <ul class="templatemo-submenu">
-                    <li><a href="./article">English</a></li>
-                    <li><a href="./article">China</a></li>
+                    <li><a href="./article_en">English</a></li>
+                    <li><a href="./article_cn">China</a></li>
                 </ul>
             </li>
             <li><a href="./users"><i class="fa fa-users"></i><span class="badge pull-right">NEW</span>Manage Users</a></li>
@@ -41,10 +42,8 @@
     <div class="templatemo-content-wrapper">
         <div class="templatemo-content">
             <ol class="breadcrumb">
-                <li><a href="/">Admin Panel</a></li>
                 <li><a href="/admin">Dashboard</a></li>
-                <li class="active">Overview</li>
-                <li><a href="/logout">Sign In Form</a></li>
+                <li class="active">Article</li>
             </ol>
             <h1>Dashboard</h1>
 
@@ -52,9 +51,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <ul class="nav nav-pills">
-                            <li class="active"><a href="/admin">Home <span class="badge">42</span></a></li>
-                            <li class="active"><a href="#">Profile <span class="badge">126</span></a></li>
-                            <li class="active"><a href="#">Messages <span class="badge">14</span></a></li>
+                            <li class="active"><a href="javascript:">Post</a></li>
                         </ul>
                     </div>
                 </div>
