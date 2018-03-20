@@ -39,7 +39,7 @@ router.use("/register",require('./register'));
 router.use("/login",require('./login'));
 router.use("/logout",(req,res)=>{
     res.clearCookie('login');
-    res.redirect('/');
+    res.redirect('/login');
 });
 
 module.exports = router;
